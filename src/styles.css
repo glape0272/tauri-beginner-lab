@@ -1,19 +1,12 @@
-.logo.vite:hover {
-  filter: drop-shadow(0 0 2em #747bff);
-}
-
-.logo.typescript:hover {
-  filter: drop-shadow(0 0 2em #2d79c7);
-}
 :root {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  color: #172026;
+  background: #eef2f0;
+  font-family:
+    Inter, "Yu Gothic", "Hiragino Kaku Gothic ProN", Meiryo, system-ui,
+    sans-serif;
   font-size: 16px;
-  line-height: 24px;
+  line-height: 1.6;
   font-weight: 400;
-
-  color: #0f0f0f;
-  background-color: #f6f6f6;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -21,96 +14,242 @@
   -webkit-text-size-adjust: 100%;
 }
 
-.container {
+* {
+  box-sizing: border-box;
+}
+
+body {
   margin: 0;
-  padding-top: 10vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
+  min-width: 320px;
+  min-height: 100vh;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: 0.75s;
-}
-
-.logo.tauri:hover {
-  filter: drop-shadow(0 0 2em #24c8db);
-}
-
-.row {
-  display: flex;
-  justify-content: center;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-
-a:hover {
-  color: #535bf2;
-}
-
-h1 {
-  text-align: center;
-}
-
-input,
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  color: #0f0f0f;
-  background-color: #ffffff;
-  transition: border-color 0.25s;
-  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+button,
+input {
+  font: inherit;
 }
 
 button {
+  min-height: 44px;
+  border: 0;
+  border-radius: 6px;
+  padding: 0.65rem 1rem;
+  color: #ffffff;
+  background: #255f85;
   cursor: pointer;
 }
 
 button:hover {
-  border-color: #396cd8;
-}
-button:active {
-  border-color: #396cd8;
-  background-color: #e8e8e8;
+  background: #1c4d6d;
 }
 
-input,
-button {
-  outline: none;
+input {
+  min-width: 0;
+  width: 100%;
+  min-height: 44px;
+  border: 1px solid #b8c6c2;
+  border-radius: 6px;
+  padding: 0.65rem 0.75rem;
+  color: #172026;
+  background: #ffffff;
 }
 
-#greet-input {
-  margin-right: 5px;
+label {
+  display: grid;
+  gap: 0.35rem;
+  color: #47545a;
+  font-size: 0.92rem;
+  font-weight: 700;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    color: #f6f6f6;
-    background-color: #2f2f2f;
+output {
+  display: block;
+  min-height: 3.25rem;
+  border-left: 4px solid #d48b2a;
+  padding: 0.8rem 1rem;
+  color: #23313a;
+  background: #fff8ed;
+}
+
+.app-shell {
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+.workspace {
+  width: min(1120px, 100%);
+  margin: 0 auto;
+}
+
+.workspace-header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1.5rem;
+  align-items: end;
+  margin-bottom: 1.5rem;
+}
+
+.eyebrow {
+  margin: 0 0 0.35rem;
+  color: #5f6f6b;
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  max-width: 760px;
+  margin-bottom: 0;
+  color: #142128;
+  font-size: 2.15rem;
+  line-height: 1.2;
+}
+
+h2 {
+  margin-bottom: 0.4rem;
+  color: #172026;
+  font-size: 1.1rem;
+  line-height: 1.3;
+}
+
+p {
+  color: #5b686d;
+}
+
+.status-panel {
+  min-width: 180px;
+  border: 1px solid #cdd9d5;
+  border-radius: 8px;
+  padding: 0.8rem 1rem;
+  background: #ffffff;
+}
+
+.status-label {
+  display: block;
+  color: #60716c;
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.status-panel strong {
+  display: block;
+  margin-top: 0.2rem;
+  color: #255f85;
+}
+
+.command-grid,
+.info-layout {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.info-layout {
+  margin-top: 1rem;
+}
+
+.tool-panel {
+  display: grid;
+  align-content: start;
+  gap: 1rem;
+  border: 1px solid #cdd9d5;
+  border-radius: 8px;
+  padding: 1.25rem;
+  background: #ffffff;
+}
+
+.inline-control {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.65rem;
+}
+
+.field-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.info-list {
+  display: grid;
+  gap: 0.75rem;
+  margin: 0;
+}
+
+.info-list div {
+  display: grid;
+  grid-template-columns: 8rem 1fr;
+  gap: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #e3ebe8;
+}
+
+.info-list div:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+dt {
+  color: #60716c;
+  font-weight: 800;
+}
+
+dd {
+  margin: 0;
+  color: #25333a;
+}
+
+.lesson-list {
+  display: grid;
+  gap: 0.65rem;
+  margin: 0;
+  padding-left: 1.4rem;
+}
+
+.lesson-list li {
+  padding-left: 0.25rem;
+}
+
+.lesson-list strong {
+  display: block;
+  color: #255f85;
+}
+
+.lesson-list span {
+  display: block;
+  color: #536166;
+}
+
+@media (max-width: 760px) {
+  .app-shell {
+    padding: 1rem;
   }
 
-  a:hover {
-    color: #24c8db;
+  .workspace-header,
+  .command-grid,
+  .info-layout,
+  .inline-control,
+  .field-row {
+    grid-template-columns: 1fr;
   }
 
-  input,
-  button {
-    color: #ffffff;
-    background-color: #0f0f0f98;
+  h1 {
+    font-size: 1.65rem;
   }
-  button:active {
-    background-color: #0f0f0f69;
+
+  .status-panel {
+    min-width: 0;
+  }
+
+  .info-list div {
+    grid-template-columns: 1fr;
+    gap: 0.2rem;
   }
 }

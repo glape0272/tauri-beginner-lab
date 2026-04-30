@@ -1,7 +1,62 @@
-# Tauri + Vanilla TS
+# Tauri Beginner Lab
 
-This template should help get you started developing with Tauri in vanilla HTML, CSS and Typescript.
+RustもTypeScriptもTauriもこれから学ぶ人が、デスクトップアプリ開発の入口に立つための学習プロジェクトです。
 
-## Recommended IDE Setup
+このリポジトリは完成品アプリではなく、教材を読みながら少しずつ改造していくための練習場です。完全初心者は最初から順番に進めます。フロントエンド経験やPHP/Laravel経験がある人は、読み飛ばしてよい章を確認しながら進められるようにしています。
 
-- [VS Code](https://code.visualstudio.com/) + [Tauri](https://marketplace.visualstudio.com/items?itemName=tauri-apps.tauri-vscode) + [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer)
+## 最初に読むもの
+
+学習の入口は [docs/index.md](docs/index.md) です。経験別の進め方は [docs/learning-routes.md](docs/learning-routes.md) にまとめています。
+
+完全初心者が順番に進める場合:
+
+1. [docs/00-orientation.md](docs/00-orientation.md)
+2. [docs/01-project-map.md](docs/01-project-map.md)
+3. [docs/02-invoke-basic.md](docs/02-invoke-basic.md)
+4. [docs/03-rust-command.md](docs/03-rust-command.md)
+5. [docs/04-typed-data.md](docs/04-typed-data.md)
+6. [docs/05-error-handling.md](docs/05-error-handling.md)
+7. [docs/06-mini-project.md](docs/06-mini-project.md)
+
+フロントエンド経験がある場合は、`00`と`01`を軽く確認して、`02. invokeの基本`から手を動かすのがおすすめです。
+
+PHP/Laravel経験がある場合は、`00`の対応表を読んでから、`02`、`03`、`05`を重点的に進めてください。Controller、Request、JSONレスポンス、バリデーションの感覚をTauriに置き換えると理解しやすいです。
+
+## 起動方法
+
+```bash
+npm install
+npm run tauri dev
+```
+
+PowerShellで`npm.ps1`の実行ポリシーに止められる場合は、次のように実行してください。
+
+```bash
+npm.cmd run tauri dev
+```
+
+ブラウザだけで画面を確認する場合:
+
+```bash
+npm run dev
+```
+
+ただし、`npm run dev`だけではTauriのRustコマンドは本来の形では動きません。Rust連携まで確認するときは`npm run tauri dev`を使います。
+
+## この教材で作るもの
+
+最終的には「ローカル学習ログ」の入口を作ります。
+
+- 学習メモを画面に表示する
+- TypeScriptからRustコマンドを呼ぶ
+- Rustでデータを作ってTypeScriptに返す
+- 入力値のエラーをRust側で判定する
+- 次の段階でファイル保存へ進める形にする
+
+## 確認コマンド
+
+```bash
+npm run build
+cd src-tauri
+cargo check
+```
