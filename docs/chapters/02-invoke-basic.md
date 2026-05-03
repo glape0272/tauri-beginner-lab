@@ -139,3 +139,8 @@ const name = greetInputEl.value.trim() || "Tauri learner";
 ## 次に進む条件
 
 Rust側の文章を変更し、画面上の結果が変わることを確認できれば次へ進めます。
+
+## 前後の章
+
+- 前: [01. プロジェクト地図](01-project-map.md)
+- 次: [03. Rustコマンドを書く](03-rust-command.md)

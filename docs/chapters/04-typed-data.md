@@ -189,3 +189,8 @@ difficulty: string
 ## 次に進む条件
 
 `difficulty`を追加し、画面に表示できれば、Rustから型付きデータを返す流れを理解できている。
+
+## 前後の章
+
+- 前: [03. Rustコマンドを書く](03-rust-command.md)
+- 次: [05. エラー処理](05-error-handling.md)

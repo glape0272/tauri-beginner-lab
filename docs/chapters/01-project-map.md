@@ -128,3 +128,8 @@ pub fn run() {
 ## 次に進む条件
 
 `src/main.ts`の`invoke("greet", ...)`と、`src-tauri/src/lib.rs`の`fn greet`が対応していることが見えていれば次へ進めます。
+
+## 前後の章
+
+- 前: [00. オリエンテーション](00-orientation.md)
+- 次: [02. invokeの基本](02-invoke-basic.md)
