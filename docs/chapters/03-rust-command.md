@@ -8,9 +8,9 @@
 
 ## この章の進み方
 
-- 完全初心者: 手順通りに写して、動くことを先に確認します。
-- フロントエンド経験者: HTML追加部分は軽く確認し、Rust関数と`invoke`の対応を重点的に見ます。
-- PHP/Laravel経験者: 新しいControllerメソッドを追加してルーティングに登録する感覚で読んでください。
+- 完全初心者: 手順通りに写し、動作確認を先に行う。
+- フロントエンド経験者: HTML追加部分は確認程度にとどめ、Rust関数と`invoke`の対応を重点的に見る。
+- PHP/Laravel経験者: 新しいControllerメソッドを追加してルーティングに登録する流れとして読む。
 
 ## 先に見るファイル
 
@@ -27,7 +27,7 @@ Rustコマンドを増やすときは、基本的に次の4手順です。
 3. `tauri::generate_handler![...]`に登録する
 4. TypeScriptから`invoke`で呼ぶ
 
-この順番を覚えるだけで、小さな機能は追加できます。
+この順番を押さえると、小さな機能を追加できる。
 
 ## Rust関数の基本
 
@@ -62,7 +62,7 @@ fn double_number(value: i32) -> i32 {
 }
 ```
 
-置く場所は、`calculate_progress`の下で構いません。
+置く場所は、`calculate_progress`の下でよい。
 
 ### 2. handlerに登録する
 
@@ -170,4 +170,4 @@ npm run build
 
 ## 次に進む条件
 
-自分で追加した`double_number`が画面から動かせれば、Tauri command追加の基本は掴めています。
+自分で追加した`double_number`が画面から動かせれば、Tauri command追加の基本を理解できている。

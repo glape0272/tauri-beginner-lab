@@ -18,7 +18,7 @@ RustもTypeScriptもTauriもこれから学ぶ人が、デスクトップアプ�
 6. [docs/chapters/05-error-handling.md](docs/chapters/05-error-handling.md)
 7. [docs/chapters/06-mini-project.md](docs/chapters/06-mini-project.md)
 
-フロントエンド経験がある場合は、`00`と`01`を軽く確認して、`02. invokeの基本`から手を動かすのがおすすめです。
+フロントエンド経験がある場合は、`00`と`01`を確認し、`02. invokeの基本`から実装に入る。
 
 PHP/Laravel経験がある場合は、`00`の対応表を読んでから、`02`、`03`、`05`を重点的に進めてください。Controller、Request、JSONレスポンス、バリデーションの感覚をTauriに置き換えると理解しやすいです。
 
@@ -29,7 +29,7 @@ npm install
 npm run tauri dev
 ```
 
-PowerShellで`npm.ps1`の実行ポリシーに止められる場合は、次のように実行してください。
+PowerShellで`npm.ps1`の実行ポリシーに止められる場合は、次の形式で実行する。
 
 ```bash
 npm.cmd run tauri dev

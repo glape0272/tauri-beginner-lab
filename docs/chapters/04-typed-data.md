@@ -8,9 +8,9 @@
 
 ## この章の進み方
 
-- 完全初心者: `struct`は「複数の値をまとめた箱」と考えて進めます。
-- フロントエンド経験者: TypeScriptの`type`は確認だけでよく、Rustの`struct`とフィールド名の対応を見ます。
-- PHP/Laravel経験者: JSONレスポンスの形をRust側で定義している、と考えてください。
+- 完全初心者: `struct`は「複数の値をまとめた箱」と考えて進める。
+- フロントエンド経験者: TypeScriptの`type`は確認程度にとどめ、Rustの`struct`とフィールド名の対応を見る。
+- PHP/Laravel経験者: JSONレスポンスの形をRust側で定義しているものとして読む。
 
 ## 先に見るファイル
 
@@ -65,7 +65,7 @@ type AppInfo = {
 
 `#[derive(serde::Serialize)]`は、この`struct`をTypeScript側へ渡せる形に変換するための指定です。
 
-最初はこう覚えてください。
+最初は次の形で理解する。
 
 「Rustのデータをフロントエンドへ返したい`struct`には`serde::Serialize`を付ける」
 
@@ -84,7 +84,7 @@ fn get_app_info() -> AppInfo {
 
 戻り値の型が`AppInfo`になっています。
 
-`String`の値を作るときに`.to_string()`が付いています。Rustでは文字列の扱いがTypeScriptより細かいので、ここでは「返すための文字列に変換している」くらいで大丈夫です。
+`String`の値を作るときに`.to_string()`が付いている。Rustでは文字列の扱いがTypeScriptより細かいため、ここでは「返すための文字列に変換している」と理解する。
 
 ## TypeScript側の型
 
@@ -178,7 +178,7 @@ TypeScript:
 difficulty: string
 ```
 
-この2つは別名です。最初は完全に同じ名前にしましょう。
+この2つは別名である。最初は完全に同じ名前にする。
 
 ## 理解チェック
 
@@ -188,4 +188,4 @@ difficulty: string
 
 ## 次に進む条件
 
-`difficulty`を追加し、画面に表示できれば、Rustから型付きデータを返す流れは掴めています。
+`difficulty`を追加し、画面に表示できれば、Rustから型付きデータを返す流れを理解できている。

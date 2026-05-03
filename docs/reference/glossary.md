@@ -22,7 +22,7 @@ Rustのパッケージ管理とビルドツールです。`cargo check`でRust�
 
 ## crate
 
-Rustのパッケージ単位です。JavaScriptのnpm packageに近い感覚で見て構いません。
+Rustのパッケージ単位です。JavaScriptのnpm packageに近いものとして捉えるとよい。
 
 ## command
 

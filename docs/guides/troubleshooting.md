@@ -90,7 +90,7 @@ Rust側が`name`を待っているのに、TypeScript側が`userName`を送っ�
 Property 'difficulty' does not exist on type 'AppInfo'
 ```
 
-TypeScript側の型にフィールドを追加してください。
+TypeScript側の型にフィールドを追加する。
 
 ```ts
 type AppInfo = {
@@ -135,7 +135,7 @@ Rust側だけ確認できていて、TypeScriptやHTMLが更新されていな�
 
 ## まず何を確認すればいいかわからない
 
-次の順番で見るのがおすすめです。
+次の順番で確認する。
 
 1. `npm run build`
 2. `cd src-tauri`
