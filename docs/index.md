@@ -2,7 +2,7 @@
 
 この教材は、Rust、TypeScript、Tauriの経験がない人でも始められる入門コースです。
 
-完全初心者は順番に進めてください。フロントエンド経験やPHP/Laravel経験がある人は、[経験別の進め方](learning-routes.md) を見て、読み飛ばしてよい章を確認しながら進めてください。
+完全初心者は順番に進めてください。フロントエンド経験やPHP/Laravel経験がある人は、[経験別の進め方](guides/learning-routes.md) を見て、読み飛ばしてよい章を確認しながら進めてください。
 
 ## ゴール
 
@@ -20,21 +20,21 @@
 
 | 章 | 内容 | 目安 |
 | --- | --- | --- |
-| [00. オリエンテーション](00-orientation.md) | Tauriの全体像と学習方針 | 15分 |
-| [01. プロジェクト地図](01-project-map.md) | ファイル構成と役割 | 20分 |
-| [02. invokeの基本](02-invoke-basic.md) | TypeScriptからRustを呼ぶ | 30分 |
-| [03. Rustコマンドを書く](03-rust-command.md) | Rust関数の追加と登録 | 40分 |
-| [04. 型付きデータを返す](04-typed-data.md) | `struct`とTypeScript型 | 40分 |
-| [05. エラー処理](05-error-handling.md) | `Result`と画面表示 | 30分 |
-| [06. ミニプロジェクト](06-mini-project.md) | 学習ログアプリへ拡張 | 60分 |
+| [00. オリエンテーション](chapters/00-orientation.md) | Tauriの全体像と学習方針 | 15分 |
+| [01. プロジェクト地図](chapters/01-project-map.md) | ファイル構成と役割 | 20分 |
+| [02. invokeの基本](chapters/02-invoke-basic.md) | TypeScriptからRustを呼ぶ | 30分 |
+| [03. Rustコマンドを書く](chapters/03-rust-command.md) | Rust関数の追加と登録 | 40分 |
+| [04. 型付きデータを返す](chapters/04-typed-data.md) | `struct`とTypeScript型 | 40分 |
+| [05. エラー処理](chapters/05-error-handling.md) | `Result`と画面表示 | 30分 |
+| [06. ミニプロジェクト](chapters/06-mini-project.md) | 学習ログアプリへ拡張 | 60分 |
 
 ## 補助資料
 
-- [経験別の進め方](learning-routes.md)
-- [課題集](assignments.md)
-- [Rust / TypeScript 対応メモ](rust-ts-map.md)
-- [用語集](glossary.md)
-- [トラブルシュート](troubleshooting.md)
+- [経験別の進め方](guides/learning-routes.md)
+- [課題集](exercises/assignments.md)
+- [Rust / TypeScript 対応メモ](reference/rust-ts-map.md)
+- [用語集](reference/glossary.md)
+- [トラブルシュート](guides/troubleshooting.md)
 
 ## 進め方
 

@@ -6,17 +6,17 @@ RustもTypeScriptもTauriもこれから学ぶ人が、デスクトップアプ�
 
 ## 最初に読むもの
 
-学習の入口は [docs/index.md](docs/index.md) です。経験別の進め方は [docs/learning-routes.md](docs/learning-routes.md) にまとめています。
+学習の入口は [docs/index.md](docs/index.md) です。経験別の進め方は [docs/guides/learning-routes.md](docs/guides/learning-routes.md) にまとめています。
 
 完全初心者が順番に進める場合:
 
-1. [docs/00-orientation.md](docs/00-orientation.md)
-2. [docs/01-project-map.md](docs/01-project-map.md)
-3. [docs/02-invoke-basic.md](docs/02-invoke-basic.md)
-4. [docs/03-rust-command.md](docs/03-rust-command.md)
-5. [docs/04-typed-data.md](docs/04-typed-data.md)
-6. [docs/05-error-handling.md](docs/05-error-handling.md)
-7. [docs/06-mini-project.md](docs/06-mini-project.md)
+1. [docs/chapters/00-orientation.md](docs/chapters/00-orientation.md)
+2. [docs/chapters/01-project-map.md](docs/chapters/01-project-map.md)
+3. [docs/chapters/02-invoke-basic.md](docs/chapters/02-invoke-basic.md)
+4. [docs/chapters/03-rust-command.md](docs/chapters/03-rust-command.md)
+5. [docs/chapters/04-typed-data.md](docs/chapters/04-typed-data.md)
+6. [docs/chapters/05-error-handling.md](docs/chapters/05-error-handling.md)
+7. [docs/chapters/06-mini-project.md](docs/chapters/06-mini-project.md)
 
 フロントエンド経験がある場合は、`00`と`01`を軽く確認して、`02. invokeの基本`から手を動かすのがおすすめです。
 
