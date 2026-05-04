@@ -14,13 +14,13 @@
 
 ## ここで作るもの
 
-「学習ログ」の入口を作ります。
+「学習ログ」の入口を作成する。
 
 この章では、まだファイル保存は扱わない。画面上に学習メモの一覧を出し、後から保存機能を足せる形にする。
 
 ## 目標の画面
 
-画面に次の情報を表示します。
+画面に次の情報を表示する。
 
 - タイトル
 - 本文
@@ -36,7 +36,7 @@ invokeとRust関数名が対応していることを確認した
 
 ## 1. TypeScriptの型を作る
 
-`src/main.ts`に次の型を追加します。
+`src/main.ts`に次の型を追加する。
 
 ```ts
 type LearningNote = {
@@ -51,7 +51,7 @@ type LearningNote = {
 
 ## 2. 仮データを作る
 
-同じファイルに配列を追加します。
+同じファイルに配列を追加する。
 
 ```ts
 const learningNotes: LearningNote[] = [
@@ -72,7 +72,7 @@ const learningNotes: LearningNote[] = [
 
 ## 3. HTMLに表示場所を作る
 
-`index.html`の`info-layout`の後に、次のセクションを追加します。
+`index.html`の`info-layout`の後に、次のセクションを追加する。
 
 ```html
 <section class="notes-section">
@@ -85,13 +85,13 @@ const learningNotes: LearningNote[] = [
 
 ## 4. TypeScriptで描画する
 
-DOM取得を追加します。
+DOM取得を追加する。
 
 ```ts
 const noteListEl = document.querySelector<HTMLElement>("#note-list");
 ```
 
-描画関数を追加します。
+描画関数を追加する。
 
 ```ts
 function renderLearningNotes() {
@@ -111,7 +111,7 @@ function renderLearningNotes() {
 }
 ```
 
-`DOMContentLoaded`の中で呼びます。
+`DOMContentLoaded`の中で呼び出す。
 
 ```ts
 renderLearningNotes();
@@ -119,7 +119,7 @@ renderLearningNotes();
 
 ## 5. CSSを追加する
 
-`src/styles.css`に追加します。
+`src/styles.css`に追加する。
 
 ```css
 .notes-section {
@@ -163,7 +163,7 @@ npm run build
 npm run tauri dev
 ```
 
-画面に学習ログが表示されれば成功です。
+画面に学習ログが表示されれば成功である。
 
 ## 次にやるなら
 
@@ -179,13 +179,13 @@ npm run tauri dev
 ## 理解チェック
 
 - `LearningNote`型は何のために作りましたか？
-- 今回の学習ログはどこに保存されていますか？
-- ファイル保存へ進む場合、どの処理をRust側に寄せるとよさそうですか？
+- 今回の学習ログはどこに保存されているか。
+- ファイル保存へ進む場合、どの処理をRust側に寄せるとよさそうか。
 
 ## 完了条件
 
-画面に学習ログの仮データが表示され、自分で1件追加できればこの章は完了です。
+画面に学習ログの仮データが表示され、自分で1件追加できればこの章は完了である。
 
 ## 前後の章
 
-- 前: [05. エラー処理](05-error-handling.md)
+- 前: [05. エラー処理を確認する](./05-error-handling.md)

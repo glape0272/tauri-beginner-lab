@@ -8,20 +8,20 @@
 
 ## この章の進み方
 
-- 完全初心者: ファイル名を暗記せず、「画面側」と「Rust側」に分けて眺めます。
-- フロントエンド経験者: `src`は軽く確認し、`src-tauri`を重点的に見ます。
-- PHP/Laravel経験者: `src-tauri/src/lib.rs`をControllerの置き場所に近いものとして見ます。
+- 完全初心者: ファイル名を暗記せず、「画面側」と「Rust側」に分けて確認する。
+- フロントエンド経験者: `src`は軽く確認し、`src-tauri`を重点的に見る。
+- PHP/Laravel経験者: `src-tauri/src/lib.rs`をControllerの置き場所に近いものとして見る。
 
 ## 全体像
 
-このプロジェクトは、大きく2つに分かれています。
+このプロジェクトは、大きく2つに分かれている。
 
 | 場所 | 役割 |
 | --- | --- |
 | `src`と`index.html` | フロントエンド |
 | `src-tauri` | Tauri/Rust側 |
 
-フロントエンドだけを見ると、Viteの通常プロジェクトに近いです。Tauriらしさは`src-tauri`と`invoke`に出ます。
+フロントエンドだけを見ると、Viteの通常プロジェクトに近い。Tauri固有の要素は`src-tauri`と`invoke`に表れる。
 
 ## 重要ファイル
 
@@ -38,7 +38,7 @@
 
 ## npm scripts
 
-`package.json`の`scripts`を見ます。
+`package.json`の`scripts`を確認する。
 
 ```json
 "scripts": {
@@ -49,20 +49,20 @@
 }
 ```
 
-よく使うのは次の2つです。
+主に使用するのは次の2つである。
 
 ```bash
 npm run dev
 npm run tauri dev
 ```
 
-`npm run dev`はViteだけです。画面確認には使えますが、Tauriアプリとしての確認には足りません。
+`npm run dev`はViteのみを起動する。画面確認には使えるが、Tauriアプリとしての確認には不足する。
 
-`npm run tauri dev`はTauriアプリとして起動します。Rustコマンドの動作確認は基本こちらです。
+`npm run tauri dev`はTauriアプリとして起動する。Rustコマンドの動作確認では基本的にこちらを使用する。
 
 ## Rust側の入口
 
-`src-tauri/src/main.rs`は短いです。
+`src-tauri/src/main.rs`は短い。
 
 ```rust
 fn main() {
@@ -70,7 +70,7 @@ fn main() {
 }
 ```
 
-実際の処理は`src-tauri/src/lib.rs`の`run`にあります。
+実際の処理は`src-tauri/src/lib.rs`の`run`にある。
 
 ```rust
 pub fn run() {
@@ -86,19 +86,19 @@ pub fn run() {
 }
 ```
 
-ここで注目するのは`invoke_handler`です。TypeScriptから呼びたいRust関数は、ここに登録します。
+ここで注目するのは`invoke_handler`である。TypeScriptから呼び出すRust関数は、ここに登録する。
 
 ## フロントエンド側の入口
 
-`index.html`では、`src/main.ts`を読み込んでいます。
+`index.html`では、`src/main.ts`を読み込んでいる。
 
 ```html
 <script type="module" src="/src/main.ts" defer></script>
 ```
 
-つまり画面が開くと、`src/main.ts`が実行されます。
+つまり画面が開くと、`src/main.ts`が実行される。
 
-`src/main.ts`では、次のような流れで動きます。
+`src/main.ts`では、次の流れで動作する。
 
 1. DOM要素を取得する
 2. 画面に学習ステップを描画する
@@ -107,11 +107,11 @@ pub fn run() {
 
 ## ハンズオン
 
-1. `src/main.ts`を開きます。
-2. `invoke`で検索します。
-3. 呼ばれているRustコマンド名をメモします。
-4. `src-tauri/src/lib.rs`を開きます。
-5. 同じ名前の関数を探します。
+1. `src/main.ts`を開く。
+2. `invoke`で検索する。
+3. 呼ばれているRustコマンド名をメモする。
+4. `src-tauri/src/lib.rs`を開く。
+5. 同じ名前の関数を探す。
 
 見つける対象:
 
@@ -121,15 +121,15 @@ pub fn run() {
 
 ## 理解チェック
 
-- TypeScriptから呼べるRust関数を登録している場所はどこですか？
-- `npm run dev`と`npm run tauri dev`の違いは何ですか？
-- `index.html`から読み込まれるTypeScriptファイルは何ですか？
+- TypeScriptから呼べるRust関数を登録している場所はどこか。
+- `npm run dev`と`npm run tauri dev`の違いは何か。
+- `index.html`から読み込まれるTypeScriptファイルは何か。
 
 ## 次に進む条件
 
-`src/main.ts`の`invoke("greet", ...)`と、`src-tauri/src/lib.rs`の`fn greet`が対応していることが見えていれば次へ進めます。
+`src/main.ts`の`invoke("greet", ...)`と、`src-tauri/src/lib.rs`の`fn greet`が対応していることが見えていれば次へ進める。
 
 ## 前後の章
 
-- 前: [00. オリエンテーション](00-orientation.md)
-- 次: [02. invokeの基本](02-invoke-basic.md)
+- 前: [00. 学習の進め方](./00-orientation.md)
+- 次: [02. invokeの基本を確認する](./02-invoke-basic.md)

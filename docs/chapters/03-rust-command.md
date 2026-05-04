@@ -20,7 +20,7 @@
 
 ## Tauri command追加の流れ
 
-Rustコマンドを増やすときは、基本的に次の4手順です。
+Rustコマンドを増やすときは、基本的に次の4手順で進める。
 
 1. Rust関数を書く
 2. `#[tauri::command]`を付ける
@@ -31,7 +31,7 @@ Rustコマンドを増やすときは、基本的に次の4手順です。
 
 ## Rust関数の基本
 
-Rustの関数はこの形です。
+Rustの関数はこの形である。
 
 ```rust
 fn 関数名(引数名: 型) -> 戻り値の型 {
@@ -47,13 +47,13 @@ fn double_number(value: i32) -> i32 {
 }
 ```
 
-`i32`は整数の型です。TypeScriptの`number`より細かく、Rustでは整数の種類を明示します。
+`i32`は整数の型である。TypeScriptの`number`より細かく、Rustでは整数の種類を明示する。
 
 ## ハンズオン: 数値を2倍にする
 
 ### 1. Rust関数を追加する
 
-`src-tauri/src/lib.rs`に次を追加します。
+`src-tauri/src/lib.rs`に次を追加する。
 
 ```rust
 #[tauri::command]
@@ -66,7 +66,7 @@ fn double_number(value: i32) -> i32 {
 
 ### 2. handlerに登録する
 
-同じファイルの`invoke_handler`を探します。
+同じファイルの`invoke_handler`を探す。
 
 ```rust
 .invoke_handler(tauri::generate_handler![
@@ -76,7 +76,7 @@ fn double_number(value: i32) -> i32 {
 ])
 ```
 
-ここに`double_number`を追加します。
+ここに`double_number`を追加する。
 
 ```rust
 .invoke_handler(tauri::generate_handler![
@@ -91,7 +91,7 @@ Rust側はこれで呼び出し準備ができました。
 
 ### 3. HTMLを追加する
 
-`index.html`の`command-grid`の中に、練習用フォームを追加します。
+`index.html`の`command-grid`の中に、練習用フォームを追加する。
 
 ```html
 <form class="tool-panel" id="double-form">
@@ -110,7 +110,7 @@ Rust側はこれで呼び出し準備ができました。
 
 ### 4. TypeScriptから呼ぶ
 
-`src/main.ts`にDOM取得を追加します。
+`src/main.ts`にDOM取得を追加する。
 
 ```ts
 const doubleFormEl = document.querySelector<HTMLFormElement>("#double-form");
@@ -118,7 +118,7 @@ const doubleInputEl = document.querySelector<HTMLInputElement>("#double-input");
 const doubleOutputEl = document.querySelector<HTMLOutputElement>("#double-output");
 ```
 
-関数を追加します。
+関数を追加する。
 
 ```ts
 async function doubleNumber() {
@@ -132,7 +132,7 @@ async function doubleNumber() {
 }
 ```
 
-`DOMContentLoaded`の中にイベント登録を追加します。
+`DOMContentLoaded`の中にイベント登録を追加する。
 
 ```ts
 doubleFormEl?.addEventListener("submit", (event) => {
@@ -147,7 +147,7 @@ doubleFormEl?.addEventListener("submit", (event) => {
 npm run tauri dev
 ```
 
-画面で`10`を入力して、`20`が返れば成功です。
+画面で`10`を入力して、`20`が返れば成功である。
 
 Rustだけ確認したいとき:
 
@@ -164,9 +164,9 @@ npm run build
 
 ## 理解チェック
 
-- `#[tauri::command]`を付け忘れるとどうなりそうですか？
-- `generate_handler!`に登録し忘れるとどうなりそうですか？
-- TypeScriptの`invoke<number>`は何を表していますか？
+- `#[tauri::command]`を付け忘れるとどうなりそうか。
+- `generate_handler!`に登録し忘れるとどうなりそうか。
+- TypeScriptの`invoke<number>`は何を表すか。
 
 ## 次に進む条件
 
@@ -174,5 +174,5 @@ npm run build
 
 ## 前後の章
 
-- 前: [02. invokeの基本](02-invoke-basic.md)
-- 次: [04. 型付きデータを返す](04-typed-data.md)
+- 前: [02. invokeの基本を確認する](./02-invoke-basic.md)
+- 次: [04. 型付きデータを扱う](./04-typed-data.md)

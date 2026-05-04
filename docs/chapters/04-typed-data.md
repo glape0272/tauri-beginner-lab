@@ -25,7 +25,7 @@
 fn greet(name: &str) -> String
 ```
 
-実際のアプリでは、1つの文字列よりも、まとまったデータを返したくなります。
+実際のアプリでは、1つの文字列よりも、まとまったデータを返す場面が多い。
 
 例:
 
@@ -34,11 +34,11 @@ fn greet(name: &str) -> String
 - レッスン数
 - 現在のバージョン
 
-こういうデータはRustでは`struct`にまとめます。
+このようなデータはRustでは`struct`にまとめる。
 
 ## Rust側のstruct
 
-現在の`src-tauri/src/lib.rs`には、次の`AppInfo`があります。
+現在の`src-tauri/src/lib.rs`には、次の`AppInfo`がある。
 
 ```rust
 #[derive(serde::Serialize)]
@@ -49,9 +49,9 @@ struct AppInfo {
 }
 ```
 
-`struct`はTypeScriptのオブジェクト型に近いです。
+`struct`はTypeScriptのオブジェクト型に近い。
 
-TypeScript風に見ると、だいたいこうです。
+TypeScript風に見ると、おおむね次の形である。
 
 ```ts
 type AppInfo = {
@@ -63,7 +63,7 @@ type AppInfo = {
 
 ## serde::Serializeとは
 
-`#[derive(serde::Serialize)]`は、この`struct`をTypeScript側へ渡せる形に変換するための指定です。
+`#[derive(serde::Serialize)]`は、この`struct`をTypeScript側へ渡せる形に変換するための指定である。
 
 最初は次の形で理解する。
 
@@ -82,13 +82,13 @@ fn get_app_info() -> AppInfo {
 }
 ```
 
-戻り値の型が`AppInfo`になっています。
+戻り値の型が`AppInfo`になっている。
 
 `String`の値を作るときに`.to_string()`が付いている。Rustでは文字列の扱いがTypeScriptより細かいため、ここでは「返すための文字列に変換している」と理解する。
 
 ## TypeScript側の型
 
-`src/main.ts`には対応する型があります。
+`src/main.ts`には対応する型がある。
 
 ```ts
 type AppInfo = {
@@ -98,19 +98,19 @@ type AppInfo = {
 };
 ```
 
-そして、次のように受け取っています。
+そして、次のように受け取っている。
 
 ```ts
 const info = await invoke<AppInfo>("get_app_info");
 ```
 
-`invoke<AppInfo>`により、TypeScript側では`info.app_name`や`info.lesson_count`が補完されます。
+`invoke<AppInfo>`により、TypeScript側では`info.app_name`や`info.lesson_count`が補完される。
 
 ## ハンズオン: 難易度を追加する
 
 ### 1. Rustのstructにフィールドを追加
 
-`AppInfo`に`difficulty`を追加します。
+`AppInfo`に`difficulty`を追加する。
 
 ```rust
 struct AppInfo {
@@ -145,7 +145,7 @@ type AppInfo = {
 
 ### 4. 画面表示にも追加
 
-`loadAppInfo`の`innerHTML`に追加します。
+`loadAppInfo`の`innerHTML`に追加する。
 
 ```ts
 <div>
@@ -158,11 +158,11 @@ type AppInfo = {
 
 ### Rust側だけ追加する
 
-Rust側だけ`difficulty`を追加しても、TypeScript側の型にないと補完されません。
+Rust側だけ`difficulty`を追加しても、TypeScript側の型にないと補完されない。
 
 ### TypeScript側だけ追加する
 
-TypeScript側だけ`difficulty`を書いても、Rustが返していなければ`undefined`になります。
+TypeScript側だけ`difficulty`を書いても、Rustが返していなければ`undefined`になる。
 
 ### フィールド名を変えてしまう
 
@@ -182,9 +182,9 @@ difficulty: string
 
 ## 理解チェック
 
-- `serde::Serialize`は何のために付けていますか？
-- Rustの`u8`はTypeScript側では何型として扱っていますか？
-- `AppInfo`にフィールドを追加するとき、どのファイルを変更しますか？
+- `serde::Serialize`は何のために付けるか。
+- Rustの`u8`はTypeScript側では何型として扱うか。
+- `AppInfo`にフィールドを追加するとき、どのファイルを変更するか。
 
 ## 次に進む条件
 
@@ -192,5 +192,5 @@ difficulty: string
 
 ## 前後の章
 
-- 前: [03. Rustコマンドを書く](03-rust-command.md)
-- 次: [05. エラー処理](05-error-handling.md)
+- 前: [03. Rustコマンドを追加する](./03-rust-command.md)
+- 次: [05. エラー処理を確認する](./05-error-handling.md)

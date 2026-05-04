@@ -19,7 +19,7 @@
 
 ## なぜエラー処理が必要か
 
-アプリでは、ユーザーがいつも正しい値を入れるとは限りません。
+アプリでは、ユーザーが常に正しい値を入力するとは限らない。
 
 例:
 
@@ -28,17 +28,17 @@
 - 数値欄が空
 - 想定外の文字列が入る
 
-フロントエンド側でもチェックできますが、TauriではRust側でも重要な判定を行うことがあります。ファイル操作やOSに近い処理では、Rust側で失敗する可能性があるからです。
+フロントエンド側でもチェックできるが、TauriではRust側でも重要な判定を行うことがある。ファイル操作やOSに近い処理では、Rust側で失敗する可能性があるためである。
 
 ## Resultの基本
 
-Rustでは、成功または失敗を表すためによく`Result`を使います。
+Rustでは、成功または失敗を表すために`Result`を使うことが多い。
 
 ```rust
 Result<成功時の型, 失敗時の型>
 ```
 
-このプロジェクトでは次の形です。
+このプロジェクトでは次の形である。
 
 ```rust
 Result<u8, String>
@@ -72,11 +72,11 @@ fn calculate_progress(completed: u8, total: u8) -> Result<u8, String> {
 - `completed > total`なら失敗
 - 問題なければ進捗率を返す
 
-`Err(...)`は失敗、`Ok(...)`は成功です。
+`Err(...)`は失敗、`Ok(...)`は成功である。
 
 ## TypeScript側で受ける
 
-`src/main.ts`では、`try/catch`で受けています。
+`src/main.ts`では、`try/catch`で受けている。
 
 ```ts
 try {
@@ -91,11 +91,11 @@ try {
 }
 ```
 
-Rust側が`Ok`を返すと`try`の中が進みます。Rust側が`Err`を返すと`catch`に入ります。
+Rust側が`Ok`を返すと`try`の中が進む。Rust側が`Err`を返すと`catch`に入る。
 
 ## ハンズオン: エラーメッセージを増やす
 
-今の実装は、数値としては`u8`を受け取っています。`u8`は`0`から`255`までの整数です。
+現在の実装は、数値として`u8`を受け取っている。`u8`は`0`から`255`までの整数である。
 
 既存の範囲で、次のルールを追加する。
 
@@ -113,7 +113,7 @@ if total > 100 {
 
 ## ハンズオン: 表示文を変える
 
-TypeScript側のエラー表示を変えてみます。
+TypeScript側のエラー表示を変更する。
 
 変更前:
 
@@ -127,11 +127,11 @@ progressOutputEl.textContent = `エラー: ${String(error)}`;
 progressOutputEl.textContent = `入力を確認してください: ${String(error)}`;
 ```
 
-エラー文の作成はRust、画面上の見せ方はTypeScript、という分担が見えます。
+エラー文の作成はRust、画面上の見せ方はTypeScript、という分担が見える。
 
 ## 発展: フロントエンド側でも先に止める
 
-Rustへ送る前にTypeScript側で空欄チェックを入れることもできます。
+Rustへ送る前にTypeScript側で空欄チェックを入れることもできる。
 
 ```ts
 if (doneInputEl.value === "" || totalInputEl.value === "") {
@@ -145,10 +145,10 @@ if (doneInputEl.value === "" || totalInputEl.value === "") {
 
 ## 理解チェック
 
-- `Result<u8, String>`はどういう意味ですか？
-- Rustの`Err`はTypeScript側のどこに届きますか？
-- エラー文の内容を作っているのはどちら側ですか？
-- エラー文の表示方法を決めているのはどちら側ですか？
+- `Result<u8, String>`はどういう意味か。
+- Rustの`Err`はTypeScript側のどこに届くか。
+- エラー文の内容を作っているのはどちら側か。
+- エラー文の表示方法を決めているのはどちら側か。
 
 ## 次に進む条件
 
@@ -156,5 +156,5 @@ if (doneInputEl.value === "" || totalInputEl.value === "") {
 
 ## 前後の章
 
-- 前: [04. 型付きデータを返す](04-typed-data.md)
-- 次: [06. ミニプロジェクト](06-mini-project.md)
+- 前: [04. 型付きデータを扱う](./04-typed-data.md)
+- 次: [06. ミニプロジェクト](./06-mini-project.md)

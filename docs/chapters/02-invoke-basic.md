@@ -8,9 +8,9 @@
 
 ## この章の進み方
 
-- 完全初心者: コードを1行ずつ追いながら進めます。
-- フロントエンド経験者: `addEventListener`やDOM更新は読み飛ばし、`invoke`の行に集中します。
-- PHP/Laravel経験者: `invoke`を「Requestを投げてレスポンスを受ける処理」として読んでください。
+- 完全初心者: コードを1行ずつ追いながら進める。
+- フロントエンド経験者: `addEventListener`やDOM更新は読み飛ばし、`invoke`の行に集中する。
+- PHP/Laravel経験者: `invoke`を「Requestを投げてレスポンスを受ける処理」として読む。
 
 ## 先に見るファイル
 
@@ -20,15 +20,15 @@
 
 ## invokeとは
 
-`invoke`は、TypeScript側からRust側のTauri commandを呼ぶための関数です。
+`invoke`は、TypeScript側からRust側のTauri commandを呼ぶための関数である。
 
-このプロジェクトでは、`src/main.ts`の先頭で読み込んでいます。
+このプロジェクトでは、`src/main.ts`の先頭で読み込んでいる。
 
 ```ts
 import { invoke } from "@tauri-apps/api/core";
 ```
 
-基本形はこれです。
+基本形は次のとおりである。
 
 ```ts
 const result = await invoke<戻り値の型>("Rustの関数名", {
@@ -36,13 +36,13 @@ const result = await invoke<戻り値の型>("Rustの関数名", {
 });
 ```
 
-現在の`greet`は次のように呼んでいます。
+現在の`greet`は次のように呼び出している。
 
 ```ts
 const message = await invoke<string>("greet", { name });
 ```
 
-これは次の意味です。
+これは次の意味である。
 
 | 部分 | 意味 |
 | --- | --- |
@@ -53,7 +53,7 @@ const message = await invoke<string>("greet", { name });
 
 ## Rust側の対応
 
-`src-tauri/src/lib.rs`では、次の関数が定義されています。
+`src-tauri/src/lib.rs`では、次の関数が定義されている。
 
 ```rust
 #[tauri::command]
@@ -62,12 +62,12 @@ fn greet(name: &str) -> String {
 }
 ```
 
-大事なのは2点です。
+重要な点は2点である。
 
 - `#[tauri::command]`が付いている
 - 引数名が`name`になっている
 
-TypeScript側の`{ name }`とRust側の`name: &str`が対応します。
+TypeScript側の`{ name }`とRust側の`name: &str`が対応する。
 
 ## よくあるミス
 
@@ -85,7 +85,7 @@ Rust側:
 fn greet(name: &str) -> String
 ```
 
-この場合、`greeting`というRustコマンドがないので失敗します。
+この場合、`greeting`というRustコマンドが存在しないため失敗する。
 
 ### 引数名が違う
 
@@ -101,46 +101,46 @@ Rust側:
 fn greet(name: &str) -> String
 ```
 
-Rust側は`name`を待っているので、`userName`では届きません。
+Rust側は`name`を待っているため、`userName`では届かない。
 
 ## ハンズオン
 
-`greet`の文章を変更します。
+`greet`の文章を変更する。
 
-1. `src-tauri/src/lib.rs`を開きます。
-2. `fn greet`を探します。
-3. `format!`の文章を次のように変えます。
+1. `src-tauri/src/lib.rs`を開く。
+2. `fn greet`を探す。
+3. `format!`の文章を次のように変更する。
 
 ```rust
 format!("{name}さん、Tauriの入り口へようこそ。TypeScriptからRustを呼べています。")
 ```
 
-4. `npm run tauri dev`で起動します。
-5. 名前を入力して、文章が変わったことを確認します。
+4. `npm run tauri dev`で起動する。
+5. 名前を入力して、文章が変わったことを確認する。
 
 ## 追加ハンズオン
 
-TypeScript側で空文字のときの名前を変えてみます。
+TypeScript側で空文字のときの名前を変更する。
 
-`src/main.ts`の次の行を探します。
+`src/main.ts`の次の行を探す。
 
 ```ts
 const name = greetInputEl.value.trim() || "Tauri learner";
 ```
 
-`"Tauri learner"`を`"学習者"`に変更します。
+`"Tauri learner"`を`"学習者"`に変更する。
 
 ## 理解チェック
 
-- `invoke<string>`の`string`は何を表していますか？
-- TypeScript側の`"greet"`はRust側の何と対応していますか？
-- `{ name }`の`name`はRust側の何と対応していますか？
+- `invoke<string>`の`string`は何を表すか。
+- TypeScript側の`"greet"`はRust側の何と対応するか。
+- `{ name }`の`name`はRust側の何と対応するか。
 
 ## 次に進む条件
 
-Rust側の文章を変更し、画面上の結果が変わることを確認できれば次へ進めます。
+Rust側の文章を変更し、画面上の結果が変わることを確認できれば次へ進める。
 
 ## 前後の章
 
-- 前: [01. プロジェクト地図](01-project-map.md)
-- 次: [03. Rustコマンドを書く](03-rust-command.md)
+- 前: [01. プロジェクト構成を確認する](./01-project-map.md)
+- 次: [03. Rustコマンドを追加する](./03-rust-command.md)
