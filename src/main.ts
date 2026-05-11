@@ -173,14 +173,14 @@ const challenges: Challenge[] = [
     title: "Rust 基本から中級",
     focus: "型、Result、struct、Vecを使ってRust側を設計",
     description: "手順を写さず、要件からRust commandと戻り値を自分で設計する課題です。",
-    docPath: "docs/exercises/rust-basic-intermediate.md",
+    docPath: "docs/exercises/rust/index.md",
     files: ["src-tauri/src/lib.rs", "src/main.ts"],
     tasks: [
       "要件から関数名、引数、戻り値を決める",
       "Result、Option、struct、Vecの使いどころを判断する",
       "TypeScriptから呼び出しやすいcommandとして設計する",
     ],
-    code: `// docs/exercises/rust-basic-intermediate.md
+    code: `// docs/exercises/rust/07-validate-input.md
 // 例: Rust-07 入力検証をまとめる
 
 #[derive(serde::Serialize)]
@@ -205,14 +205,14 @@ fn create_learning_note(
     title: "TypeScript 基本から中級",
     focus: "DOM、イベント、非同期、配列描画を自分で構成",
     description: "画面側の状態、DOM更新、Rust command呼び出しを自分で組み立てる課題です。",
-    docPath: "docs/exercises/typescript-basic-intermediate.md",
+    docPath: "docs/exercises/typescript/index.md",
     files: ["index.html", "src/main.ts", "src/styles.css"],
     tasks: [
       "DOM取得、イベント登録、描画関数を分ける",
       "typeで画面に必要なデータ構造を決める",
       "try/catchでRust commandの成功と失敗を表示する",
     ],
-    code: `// docs/exercises/typescript-basic-intermediate.md
+    code: `// docs/exercises/typescript/07-state-management.md
 // 例: TS-07 小さな状態管理を作る
 
 type LearningNote = {

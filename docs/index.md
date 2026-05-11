@@ -32,8 +32,8 @@
 
 - [経験別の進め方](guides/learning-routes.md)
 - [課題集](exercises/assignments.md)
-- [Rust基本から中級課題](exercises/rust-basic-intermediate.md)
-- [TypeScript基本から中級課題](exercises/typescript-basic-intermediate.md)
+- [Rust基本から中級課題](exercises/rust/index.md)
+- [TypeScript基本から中級課題](exercises/typescript/index.md)
 - [Rust / TypeScript 対応メモ](reference/rust-ts-map.md)
 - [用語集](reference/glossary.md)
 - [トラブルシュート](guides/troubleshooting.md)
