@@ -1,6 +1,6 @@
-# Tauri Beginner Lab 教材目次
+# Tauri Beginner Lab 教材
 
-この教材は、Rust、TypeScript、Tauriの経験がない人でも始められる入門コースです。
+この教材は、Rust、TypeScript、Tauriの経験がない人でも始められる入門コースである。
 
 初学者は標準ルートに沿って順番に進める。フロントエンド経験やPHP/Laravel経験がある場合は、[経験別の進め方](guides/learning-routes.md) で省略できる章を確認する。
 
@@ -16,7 +16,7 @@
 
 ## 学習ルート
 
-完全初心者向けの標準ルートです。
+完全初心者向けの標準ルートである。
 
 | 章 | 内容 | 目安 |
 | --- | --- | --- |
@@ -32,15 +32,15 @@
 
 - [経験別の進め方](guides/learning-routes.md)
 - [課題集](exercises/assignments.md)
-- [Rust基本から中級課題](exercises/rust/index.md)
-- [TypeScript基本から中級課題](exercises/typescript/index.md)
+- [Rust 基本から中級課題](exercises/rust/index.md)
+- [TypeScript 基本から中級課題](exercises/typescript/index.md)
 - [Rust / TypeScript 対応メモ](reference/rust-ts-map.md)
 - [用語集](reference/glossary.md)
 - [トラブルシュート](guides/troubleshooting.md)
 
 ## 進め方
 
-各章は次の形になっています。
+各章は次の構成である。
 
 - 学ぶこと
 - 先に見るファイル
@@ -53,7 +53,7 @@
 
 ## 読み飛ばしルール
 
-各章の先頭に「この章の進み方」を置いています。
+各章の先頭に「この章の進み方」を配置している。
 
 - 完全初心者: 章の最初から順番に読む
 - フロントエンド経験者: HTML/CSS/DOMの説明は確認だけでよい

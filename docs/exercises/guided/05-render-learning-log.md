@@ -7,7 +7,7 @@
 - TypeScript側でデータ型を作る
 - 配列を画面に描画する
 
-## やること
+## 作業
 
 1. `LearningNote`型を作る
 2. `learningNotes`配列を作る

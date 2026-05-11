@@ -6,7 +6,7 @@
 
 - Rustの`struct`とTypeScriptの`type`を対応させる
 
-## やること
+## 作業
 
 1. Rust側の`AppInfo`に`difficulty: String`を追加する
 2. `get_app_info`の戻り値にも`difficulty`を追加する

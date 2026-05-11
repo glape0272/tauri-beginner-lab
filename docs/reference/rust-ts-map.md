@@ -1,6 +1,6 @@
 # Rust / TypeScript 対応メモ
 
-Tauriでは、画面側はTypeScript、OSに近い処理や重い処理はRustに置くことが多いです。最初は完全理解より、対応関係を見ながら読めれば十分です。
+Tauriでは、画面側はTypeScript、OSに近い処理や重い処理はRustに置くことが多い。最初は完全理解より、対応関係を見ながら読めれば十分である。
 
 ## 基本の対応
 
@@ -58,7 +58,7 @@ type AppInfo = {
 };
 ```
 
-Rustのフィールド名を`app_name`にすると、TypeScriptでも`app_name`として届きます。最初は名前をそのまま合わせるのがわかりやすいです。
+Rustのフィールド名を`app_name`にすると、TypeScriptでも`app_name`として届く。最初は名前をそのまま合わせるのがわかりやすい。
 
 ## 配列を返す
 
@@ -93,7 +93,7 @@ type Lesson = {
 const lessons = await invoke<Lesson[]>("get_lessons");
 ```
 
-`Vec<Lesson>`はTypeScript側では`Lesson[]`として扱います。
+`Vec<Lesson>`はTypeScript側では`Lesson[]`として扱う。
 
 ## Resultでエラーを返す
 
@@ -124,7 +124,7 @@ try {
 }
 ```
 
-`Ok(...)`は成功、`Err(...)`は失敗です。Tauriでは`Err`がTypeScript側の`catch`に届きます。
+`Ok(...)`は成功、`Err(...)`は失敗である。Tauriでは`Err`がTypeScript側の`catch`に届く。
 
 ## Rustの文字列でよく見る形
 
@@ -132,16 +132,16 @@ try {
 "text"
 ```
 
-これは文字列スライスです。型としてはだいたい`&str`として見ることが多いです。
+文字列スライス。型としてはだいたい`&str`として見ることが多い。
 
 ```rust
 "text".to_string()
 ```
 
-これは所有された文字列`String`に変換しています。`struct`のフィールドに入れて返すときによく使います。
+所有された文字列`String`への変換。`struct`のフィールドに入れて返すときによく使う。
 
 ```rust
 format!("Hello, {name}")
 ```
 
-これは文字列を組み立てて`String`を返します。TypeScriptのテンプレートリテラルに少し似ています。
+文字列を組み立てて`String`を返す処理。TypeScriptのテンプレートリテラルに少し似ている。

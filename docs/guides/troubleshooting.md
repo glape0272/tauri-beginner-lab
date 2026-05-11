@@ -8,13 +8,13 @@
 このシステムではスクリプトの実行が無効になっているため...
 ```
 
-この環境では`npm.ps1`が実行ポリシーで止まることがあります。まずは`npm.cmd`を使ってください。
+この環境では`npm.ps1`が実行ポリシーで止まることがある。まずは`npm.cmd`を使う。
 
 ```bash
 npm.cmd run tauri dev
 ```
 
-ビルドも同じです。
+ビルドも同じ。
 
 ```bash
 npm.cmd run build
@@ -22,9 +22,9 @@ npm.cmd run build
 
 ## `npm run dev`ではRustコマンドが動かない
 
-`npm run dev`はViteだけを起動します。画面の見た目確認には使えますが、Tauriアプリとしては起動していません。
+`npm run dev`はViteだけを起動する。画面の見た目確認には使えるが、Tauriアプリとしては起動していない。
 
-Rustコマンドまで確認するときは次を使います。
+Rustコマンドまで確認するときは次を使う。
 
 ```bash
 npm run tauri dev
@@ -62,7 +62,7 @@ await invoke<number>("double_number", { value });
 
 ## Rust側に引数が届かない
 
-TypeScript側のオブジェクトのキーと、Rust側の引数名を合わせます。
+TypeScript側のオブジェクトのキーと、Rust側の引数名を合わせる。
 
 正しい例:
 
@@ -80,7 +80,7 @@ fn greet(name: &str) -> String
 await invoke<string>("greet", { userName: "Aki" });
 ```
 
-Rust側が`name`を待っているのに、TypeScript側が`userName`を送っています。
+Rust側が`name`を待っているのに、TypeScript側が`userName`を送っている。
 
 ## TypeScriptでプロパティが存在しないと言われる
 
@@ -101,7 +101,7 @@ type AppInfo = {
 };
 ```
 
-Rust側にも同じフィールドが必要です。
+Rust側にも同じフィールドが必要である。
 
 ## Rustでmissing fieldと言われる
 
@@ -111,7 +111,7 @@ Rust側にも同じフィールドが必要です。
 missing field `difficulty` in initializer of `AppInfo`
 ```
 
-`struct`にフィールドを追加したら、値を作っている場所にも追加が必要です。
+`struct`にフィールドを追加したら、値を作っている場所にも追加が必要である。
 
 ```rust
 AppInfo {
@@ -124,7 +124,7 @@ AppInfo {
 
 ## `cargo check`は通るが画面が変わらない
 
-Rust側だけ確認できていて、TypeScriptやHTMLが更新されていない可能性があります。
+Rust側だけ確認できていて、TypeScriptやHTMLが更新されていない可能性がある。
 
 確認すること:
 
@@ -143,4 +143,4 @@ Rust側だけ確認できていて、TypeScriptやHTMLが更新されていな�
 4. Tauriアプリを再起動
 5. 開発者ツールのConsoleを見る
 
-この教材では、うまくいかないときほど「TypeScript側の名前」「Rust側の名前」「handler登録」の3点を見ると解決しやすいです。
+この教材では、うまくいかないときほど「TypeScript側の名前」「Rust側の名前」「handler登録」の3点を見ると解決しやすい。

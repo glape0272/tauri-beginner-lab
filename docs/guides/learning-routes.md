@@ -45,7 +45,7 @@ HTML/CSS/JavaScriptの基本がわかる場合は、次の扱いで進める。
 
 ## PHP/Laravel経験者ルート
 
-PHPやLaravelの経験がある人は、次の対応で読むと入りやすいです。
+PHPやLaravelの経験がある人は、次の対応で読むと入りやすい。
 
 | Laravel/PHPの感覚 | Tauriで見る場所 |
 | --- | --- |

@@ -7,7 +7,7 @@
 - TypeScriptからRustコマンドを呼ぶ流れを確認する
 - Rust側の戻り値が画面に反映されることを体験する
 
-## やること
+## 作業
 
 1. `src-tauri/src/lib.rs`の`greet`を探す
 2. `format!`の文章を自分の言葉に変える

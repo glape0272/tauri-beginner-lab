@@ -36,5 +36,5 @@ PHP/Laravel経験者は、課題03をController追加、課題04をバリデー�
 
 手順を写す段階を終えたら、次の自力課題へ進む
 
-- [Rust基本から中級課題](./rust/index.md)
-- [TypeScript基本から中級課題](./typescript/index.md)
+- [Rust 基本から中級課題](./rust/index.md)
+- [TypeScript 基本から中級課題](./typescript/index.md)

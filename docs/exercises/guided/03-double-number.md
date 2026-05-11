@@ -6,7 +6,7 @@
 
 - 新しいTauri commandを自分で追加する
 
-## やること
+## 作業
 
 1. Rust側に`double_number`を追加する
 2. `generate_handler!`へ登録する
