@@ -24,20 +24,28 @@
 
         <section class="home-layout" id="home-view">
           <article class="tool-panel route-panel">
-            <h2>学習ステップと読み飛ばし</h2>
+            <h2>手順で学ぶ 01〜06</h2>
             <p>ステップを選ぶと、VSCodeで編集するファイルと内容を確認できます。</p>
             <div class="lesson-list" id="lesson-list"></div>
           </article>
 
-          <article class="tool-panel">
-            <h2>Rustから受け取った情報</h2>
+          <aside class="side-stack">
+            <article class="tool-panel">
+              <h2>自分で解く課題</h2>
+              <p>要件を読んで、自分で実装方針を考える課題です。</p>
+              <div class="challenge-list" id="challenge-list"></div>
+            </article>
+
+            <article class="tool-panel">
+              <h2>Rustから受け取った情報</h2>
             <dl class="info-list" id="app-info">
               <div>
                 <dt>アプリ名</dt>
                 <dd>読み込み中</dd>
               </div>
             </dl>
-          </article>
+            </article>
+          </aside>
         </section>
 
         <section class="code-workspace" id="code-view" hidden>

@@ -174,6 +174,12 @@ p {
   min-height: 32rem;
 }
 
+.side-stack {
+  display: grid;
+  gap: 1rem;
+  align-content: start;
+}
+
 .tool-panel {
   display: grid;
   align-content: start;
@@ -233,6 +239,11 @@ dd {
   padding: 0;
 }
 
+.challenge-list {
+  display: grid;
+  gap: 0.8rem;
+}
+
 .lesson-card {
   display: grid;
   align-content: start;
@@ -245,9 +256,18 @@ dd {
   background: #f8fbfa;
 }
 
+.challenge-card {
+  min-height: 8rem;
+  background: #fffaf1;
+}
+
 .lesson-card:hover {
   border-color: #255f85;
   background: #eef7f4;
+}
+
+.challenge-card:hover {
+  background: #fff4db;
 }
 
 .lesson-card strong {
@@ -337,6 +357,7 @@ dd {
   .workspace-grid,
   .code-toolbar,
   .lesson-list,
+  .side-stack,
   .inline-control,
   .field-row {
     grid-template-columns: 1fr;
