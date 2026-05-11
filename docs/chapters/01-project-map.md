@@ -66,7 +66,7 @@ npm run tauri dev
 
 ```rust
 fn main() {
-    tauri_app_lib::run()
+    tauri_beginner_lab_lib::run()
 }
 ```
 
