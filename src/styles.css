@@ -43,6 +43,18 @@ button:hover {
   background: #1c4d6d;
 }
 
+textarea {
+  width: 100%;
+  min-height: 22rem;
+  resize: vertical;
+  border: 1px solid #b8c6c2;
+  border-radius: 8px;
+  padding: 1rem;
+  color: #142128;
+  background: #f8fbfa;
+  font: 0.92rem/1.6 "Cascadia Code", Consolas, monospace;
+}
+
 input {
   min-width: 0;
   width: 100%;
@@ -87,6 +99,10 @@ output {
   gap: 1.5rem;
   align-items: end;
   margin-bottom: 1.5rem;
+}
+
+.workspace-header[hidden] {
+  display: none;
 }
 
 .eyebrow {
@@ -144,15 +160,18 @@ p {
   color: #255f85;
 }
 
-.command-grid,
-.info-layout {
+.home-layout {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: minmax(0, 1.35fr) minmax(18rem, 0.65fr);
   gap: 1rem;
 }
 
-.info-layout {
-  margin-top: 1rem;
+.home-layout[hidden] {
+  display: none;
+}
+
+.route-panel {
+  min-height: 32rem;
 }
 
 .tool-panel {
@@ -208,23 +227,104 @@ dd {
 
 .lesson-list {
   display: grid;
-  gap: 0.65rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.8rem;
   margin: 0;
-  padding-left: 1.4rem;
+  padding: 0;
 }
 
-.lesson-list li {
-  padding-left: 0.25rem;
+.lesson-card {
+  display: grid;
+  align-content: start;
+  gap: 0.35rem;
+  min-height: 7.25rem;
+  border: 1px solid #d9e3df;
+  padding: 1rem;
+  color: #172026;
+  text-align: left;
+  background: #f8fbfa;
 }
 
-.lesson-list strong {
+.lesson-card:hover {
+  border-color: #255f85;
+  background: #eef7f4;
+}
+
+.lesson-card strong {
   display: block;
   color: #255f85;
+  font-size: 1rem;
 }
 
-.lesson-list span {
+.lesson-card span {
   display: block;
   color: #536166;
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+.code-workspace {
+  display: grid;
+  gap: 1rem;
+}
+
+.code-workspace[hidden] {
+  display: none;
+}
+
+.code-toolbar {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1rem;
+  align-items: center;
+  border: 1px solid #cdd9d5;
+  border-radius: 8px;
+  padding: 1rem;
+  background: #ffffff;
+}
+
+.code-toolbar h2,
+.code-toolbar .eyebrow {
+  margin: 0;
+}
+
+.secondary-button {
+  color: #255f85;
+  border: 1px solid #b8c6c2;
+  background: #ffffff;
+}
+
+.secondary-button:hover {
+  color: #ffffff;
+  background: #255f85;
+}
+
+.workspace-grid {
+  display: grid;
+  grid-template-columns: minmax(16rem, 0.7fr) minmax(0, 1.3fr);
+  gap: 1rem;
+}
+
+.task-panel h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.task-list {
+  display: grid;
+  gap: 0.55rem;
+  margin: 0;
+  padding-left: 1.2rem;
+  color: #25333a;
+}
+
+.step-actions {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.editor-panel {
+  gap: 0.8rem;
 }
 
 @media (max-width: 760px) {
@@ -233,8 +333,10 @@ dd {
   }
 
   .workspace-header,
-  .command-grid,
-  .info-layout,
+  .home-layout,
+  .workspace-grid,
+  .code-toolbar,
+  .lesson-list,
   .inline-control,
   .field-row {
     grid-template-columns: 1fr;
@@ -251,5 +353,13 @@ dd {
   .info-list div {
     grid-template-columns: 1fr;
     gap: 0.2rem;
+  }
+
+  .route-panel {
+    min-height: 0;
+  }
+
+  .lesson-card {
+    min-height: 0;
   }
 }

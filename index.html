@@ -11,7 +11,7 @@
   <body>
     <main class="app-shell">
       <section class="workspace">
-        <header class="workspace-header">
+        <header class="workspace-header" id="workspace-header">
           <div>
             <p class="eyebrow">Tauri Beginner Lab</p>
             <h1>完全初心者から始めるTauri入門</h1>
@@ -22,41 +22,13 @@
           </div>
         </header>
 
-        <section class="command-grid" aria-label="Rust command playground">
-          <form class="tool-panel" id="greet-form">
-            <div>
-              <h2>01. Rustに文字列を渡す</h2>
-              <p>名前をTypeScriptからRustへ送り、Rustが作った文章を受け取ります。</p>
-            </div>
-            <label for="greet-input">名前</label>
-            <div class="inline-control">
-              <input id="greet-input" name="name" placeholder="例: Aki" autocomplete="off" />
-              <button type="submit">実行</button>
-            </div>
-            <output id="greet-output">まだ実行していません。</output>
-          </form>
+        <section class="home-layout" id="home-view">
+          <article class="tool-panel route-panel">
+            <h2>学習ステップと読み飛ばし</h2>
+            <p>ステップを選ぶと、VSCodeで編集するファイルと内容を確認できます。</p>
+            <div class="lesson-list" id="lesson-list"></div>
+          </article>
 
-          <form class="tool-panel" id="progress-form">
-            <div>
-              <h2>02. Rustで計算し、Resultで返す</h2>
-              <p>完了数と合計数をRustへ渡し、進捗率かエラーを受け取ります。</p>
-            </div>
-            <div class="field-row">
-              <label>
-                完了
-                <input id="done-input" name="done" type="number" min="0" value="1" />
-              </label>
-              <label>
-                合計
-                <input id="total-input" name="total" type="number" min="0" value="6" />
-              </label>
-            </div>
-            <button type="submit">計算</button>
-            <output id="progress-output">まだ計算していません。</output>
-          </form>
-        </section>
-
-        <section class="info-layout">
           <article class="tool-panel">
             <h2>Rustから受け取った情報</h2>
             <dl class="info-list" id="app-info">
@@ -66,11 +38,31 @@
               </div>
             </dl>
           </article>
+        </section>
 
-          <article class="tool-panel">
-            <h2>学習ステップと読み飛ばし</h2>
-            <ol class="lesson-list" id="lesson-list"></ol>
-          </article>
+        <section class="code-workspace" id="code-view" hidden>
+          <div class="code-toolbar">
+            <button class="secondary-button" type="button" id="back-button">戻る</button>
+            <div>
+              <p class="eyebrow">Code workspace</p>
+              <h2 id="workspace-title">学習ステップ</h2>
+            </div>
+          </div>
+
+          <div class="workspace-grid">
+            <article class="tool-panel task-panel">
+              <h3>この画面で行う処理</h3>
+              <p id="workspace-description"></p>
+              <ul class="task-list" id="workspace-tasks"></ul>
+              <div class="step-actions" id="workspace-actions"></div>
+            </article>
+
+            <article class="tool-panel editor-panel">
+              <label for="code-editor">VSCodeで編集する内容</label>
+              <textarea id="code-editor" spellcheck="false"></textarea>
+              <output id="workspace-output">ステップを選ぶと、ここに補足が表示されます。</output>
+            </article>
+          </div>
         </section>
       </section>
     </main>
