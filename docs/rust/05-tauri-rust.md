@@ -299,4 +299,4 @@ Tauriアプリとして確認する場合
 npm run tauri dev
 ```
 
-このプロジェクトでは、ビルドやテストは必要なときに実行する
+Rust + TypeScript + Tauri + Vite構成では、ビルドやテストは必要なときに実行する

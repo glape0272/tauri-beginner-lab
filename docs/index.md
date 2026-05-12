@@ -31,6 +31,7 @@
 ## 補助資料
 
 - [経験別の進め方](guides/learning-routes.md)
+- [逆引きリスト](reverse-lookup/index.md)
 - [課題集](exercises/assignments.md)
 - [Rust必須知識](rust/index.md)
 - [Rust 基本から中級課題](exercises/rust/index.md)

@@ -6,7 +6,7 @@ Web技術とRustでデスクトップアプリを作るためのフレームワ�
 
 ## Vite
 
-フロントエンドの開発サーバーとビルドツール。このプロジェクトでは`npm run dev`でViteだけを起動できる。
+フロントエンドの開発サーバーとビルドツール。Rust + TypeScript + Tauri + Vite構成では、`npm run dev`でViteだけを起動できる。
 
 ## Rust
 
@@ -14,7 +14,7 @@ Tauriのバックエンド側で使う言語。安全性と実行速度を重視
 
 ## TypeScript
 
-JavaScriptに型を足した言語。このプロジェクトでは、DOM操作とRustコマンド呼び出しに使う。
+JavaScriptに型を足した言語。React/VueなしのRust + TypeScript + Tauri + Vite構成では、DOM操作とRustコマンド呼び出しに使う。
 
 ## Cargo
 

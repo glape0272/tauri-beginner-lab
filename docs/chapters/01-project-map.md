@@ -14,14 +14,14 @@
 
 ## 全体像
 
-このプロジェクトは、大きく2つに分かれている。
+Rust + TypeScript + Tauri + Vite構成は、大きく2つに分かれている。
 
 | 場所 | 役割 |
 | --- | --- |
 | `src`と`index.html` | フロントエンド |
 | `src-tauri` | Tauri/Rust側 |
 
-フロントエンドだけを見ると、Viteの通常プロジェクトに近い。Tauri固有の要素は`src-tauri`と`invoke`に表れる。
+フロントエンドだけを見ると、React/Vueなしの素のVite + TypeScriptプロジェクトに近い。Tauri固有の要素は`src-tauri`と`invoke`に表れる。
 
 ## 重要ファイル
 

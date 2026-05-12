@@ -38,7 +38,7 @@ Rustでは、成功または失敗を表すために`Result`を使うことが�
 Result<成功時の型, 失敗時の型>
 ```
 
-このプロジェクトでは次の形である。
+Rust + TypeScript + Tauri + Vite構成では次の形である。
 
 ```rust
 Result<u8, String>

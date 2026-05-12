@@ -22,7 +22,7 @@
 
 `invoke`は、TypeScript側からRust側のTauri commandを呼ぶための関数である。
 
-このプロジェクトでは、`src/main.ts`の先頭で読み込んでいる。
+Rust + TypeScript + Tauri + Vite構成では、`src/main.ts`の先頭で読み込んでいる。
 
 ```ts
 import { invoke } from "@tauri-apps/api/core";
